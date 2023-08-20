@@ -17,7 +17,7 @@ function Hedaer() {
         <div className="max-w-4xl mx-auto flex justify-between items-center p-4">
 
             <Link to="/" className={`text-xl font-semibold ${apptheme === "dark" ? " text-white" :"text-gray-800"}`}>Logo</Link>
-            <ul className={`flex space-x-8 ${apptheme === "dark" ? " text-white" :"text-gray-800"}`}>
+            <ul className={`flex space-x-3 ${apptheme === "dark" ? " text-white" :"text-gray-800"}`}>
                 <Link to="/" className="hover:text-pink-600" href="">Home</Link>
                 <Link to="/Products" className="hover:text-pink-600" href="">Products</Link>
                 <Link to="/About" className="hover:text-pink-600"  href="">About</Link>

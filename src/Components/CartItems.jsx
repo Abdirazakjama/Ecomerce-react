@@ -3,7 +3,7 @@ import {GoTrash} from 'react-icons/go'
 import { Payment } from './Payment';
 import useShop, { shopContext } from '../shopContext';
 
-export const CartItems = () => {
+const CartItems = () => {
   const {products,updateProductQuantety,removeFromCart,ThemeChanger,apptheme} = useShop();
 
   return (
@@ -52,3 +52,4 @@ export const CartItems = () => {
     </div>
   )
 }
+export default CartItems;
