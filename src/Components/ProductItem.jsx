@@ -1,17 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import useShop from "../shopContext";
+
 
 const ProductItem = ({product})=>{
-    return <div className="border border-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow-duration-200 ease-in">
+  const {ThemeChanger,apptheme} = useShop();
+    return <Link to={`/Product-details/${product.id}`} className={`border ${apptheme === "dark" ?" bg-slate-700 text-white" : "bg-white text-gray-800"} border-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow-duration-200 ease-in`}>
     <img className="w-full h-48 object-cover" src={product.thumbnail} alt={product.name}></img>
 
     <div className="p-4">
       <h2 className="font-bold text-xl mb-2">{product.title}</h2>
-      <p className="text-gray-600 mb-4 truncate">{product.description}</p>
+      <p className={`${apptheme === "dark" ? "text-white" :"text-gray-800"} mb-4 truncate`}>{product.description}</p>
       <div className="flex justify-between items-center">
         <span className="text-blue-600 font-semibold">
            ${product.price.toFixed()}
         </span>
-        <div className="text-sm text-gray-500">{product.stock > 0 ? `${product.stock} in stock` :"out of stock"}</div>
+        <div className={`text-sm ${apptheme === "dark" ? "text-white" :"text-gray-800"}`}>{product.stock > 0 ? `${product.stock} in stock` :"out of stock"}</div>
 
         
       </div>
@@ -24,7 +28,7 @@ const ProductItem = ({product})=>{
           </span>
         </div>
     </div>
-  </div>
+  </Link>
 }
 
 export default ProductItem;
