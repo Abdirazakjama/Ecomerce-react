@@ -1,11 +1,13 @@
-import {useEffect ,useRef,useState} from 'react';
 import React from 'react';
+import {useEffect ,useRef,useState} from 'react';
+
 import productsData from "../assets/productsData.json";
 import ProductLoadingSkeleton from "./ProductLoadingSkeleton.jsx"
 
 import axios from 'axios';
 import ProductItem from './ProductItem';
 import { AiOutlineSearch } from "react-icons/ai";
+
 
 export const ProductsList = () => {
 
